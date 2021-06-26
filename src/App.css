@@ -1,13 +1,57 @@
-*{
-  width: 500px;
-  background: whitesmoke;
+
+.btn {
+  width:100px;
+  padding: 3px;
+  margin-left: 35px;
+  margin-top: 10px;
+  border-radius: 8px;
+  color: #175a0d;
 }
 
-.todo{
+.heading{
+  transform: translateX(600px);
+
+}
+
+.subhead{
+  transform:translateX(650px);
+  padding-top: 100px;
+
+}
+
+.tatti{
+  padding-left: 600px;
+  font-size : 20px;
+}
+
+.form{
+  padding-left:600px;
+}
+
+.todo {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
+  width: 200px;
+  border: 0;
+  box-shadow: lightgrey;
+}
+.del {
+  border:0px;
+  color: red;
+  box-shadow: 0 2px 2px grey;
+  border-radius: 8px;
+  padding: 10px;
+  margin:0;
+  display: flex;
+  background: #e1b12c;
+  
 }
 
-.todo > button {
-  width: auto;
+*{
+  background:#4cc2fd;
+}
+
+.txtbox{
+  padding: 5px;
 }

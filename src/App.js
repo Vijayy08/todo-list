@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import "./App.css";
-import Todo from './Todo'
 
 function App() {
 
-  let initialList = ['buy a bomb', 'buy a detonator']
+  let initialList = ['Buy a bomb', 'Buy a detonator']
   const [list, setlist] = useState(initialList);
-  const [input, setInput] = useState();
+  const [input, setInput] = useState('');
 
 
   const handleText = (event) => {
@@ -17,10 +16,15 @@ function App() {
   const addItem = (event) => {
 
     event.preventDefault();
+ 
+    if(input === ''){
+      alert("Add an item!")
+    }
+    else {
     var newList = list.concat(input)
-
     setlist(newList)
     setInput('')
+    }
   }
 
   const handleDel = (element) => {
@@ -31,9 +35,11 @@ function App() {
  
 
   const listItem = (element=>(
-    <div>
-       <Todo Item={element} key={element.toString()} />
-       <button onClick={() => handleDel(element)}> delete </button>
+    <div className="todo">
+       <span key={element.toString()}>
+         {element}
+         </span>
+       <button className="del" onClick={() => handleDel(element)}> delete </button>
     </div>
  
   ));
@@ -41,19 +47,20 @@ function App() {
   return (
     <div className="contain">
       <div>
-        <h3>Items:</h3>
-        <ul>
+        <h1 className="heading"><u>TO DO LIST</u></h1>
+        <h3 className="subhead">Items:</h3>
+        <div className="tatti">
           {list.map(listItem)}
-        </ul>
+        </div>
       </div>
 
-      <form >
+      <form className="form" >
         <div className="input">
-          <input type="text" value={input} onChange={handleText} />
+          <input className="txtbox" type="text" value={input} onChange={handleText} />
         </div>
 
-        <div className="btn">
-          <button onClick={addItem} type="submit">
+        <div>
+          <button className="btn" onClick={addItem} type="submit">
             Add items
           </button>
         </div>
