@@ -49,7 +49,7 @@ function App() {
       <div>
         <h1 className="heading"><u>TO DO LIST</u></h1>
         <h3 className="subhead">Items:</h3>
-        <div className="tatti">
+        <div className="tat">
           {list.map(listItem)}
         </div>
       </div>
